@@ -20,7 +20,6 @@ from torch.utils.data import Dataset, DataLoader
 # Load data from Kaggle
 # Data is games played by players on LiChess
 raw_chess_data = pd.read_csv('chess_games.csv', usecols=['AN', 'WhiteElo'])
-
 def select_data(lower_elo, upper_elo, train_len, test_len):
     # Only select games of certain ELO
     chess_data = raw_chess_data[(raw_chess_data['WhiteElo'] >= lower_elo) & (raw_chess_data['WhiteElo'] <= upper_elo)]
