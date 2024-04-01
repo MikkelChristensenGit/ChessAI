@@ -13,6 +13,7 @@ The script consists of several Python files and helper functions organized into 
 - **evaluation.py**: Evaluates the trained model's performance based on material and piece-square tables.
 - **minimax.py**: Implements the Minimax algorithm with alpha-beta pruning for decision making in the Chess AI.
 - **main.py**: Initializes Stockfish (black) by loading the engine and my AI (white) by loading the CNN weights. Running this script  makes my AI and Stockfish play chess against each other. All desired match statistics are kept track of during the match and will be saved as a dataframe for further investigation.
+- **duel.ipynb**: A Jupyter Notebook file that allows a player to play against my AI. The AI plays as White and the player as Black. The player enters his move in algebraic notation "e2e4" etc., and the move is visualized on the board.
 
 ## Usage
 To use the chess AI, follow these steps:
