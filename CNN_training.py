@@ -1,7 +1,10 @@
-from preprocessing_functions import *
+from utils import *
 
-# Instantiate training and test data
-chess_data_train, chess_data_test = select_data(2000, 2500, 50000, 55000) # Call function to get train and test data
+# Load data from Kaggle - Data is games played by players on LiChess
+raw_chess_data = pd.read_csv('chess_games.csv', usecols=['AN', 'WhiteElo'])
+chess_data_train, chess_data_test = select_data(raw_chess_data, 2000, 2500, 50000, 55000) # 50000 training games 2000-2500 elo
+del raw_chess_data # Delete big file from memory when we don't need it anymore
+gc.collect()
 # Check dimensions
 print(f"Training data shape: {chess_data_train.shape}")
 print(f"Training data shape: {chess_data_test.shape}")
